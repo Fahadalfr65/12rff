@@ -2,12 +2,36 @@
 <html lang="en">
 <head>
 
-<div class="text rainbow-text">Your protection is weak ϟ</div>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>discord.gg/</title>
+<title>discord.gg/wAhHAYC5wG</title>
+
 <style>
+    /* Splash screen */
+    #splash {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+    }
+
+    #splash img {
+        width: 400px;
+        animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.95); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Main site */
     body {
         margin: 0;
         padding: 0;
@@ -22,6 +46,7 @@
         flex-direction: column;
         text-align: center;
     }
+
     .image-container img {
         width: 450px; 
         height: 1;
@@ -38,6 +63,7 @@
         letter-spacing: 3.5px; 
         white-space: pre-wrap;
     }
+
     .text {
         margin-top: 20px;
         font-size: 3em; 
@@ -46,7 +72,6 @@
         letter-spacing: 3.5px; 
     }
 
-    /* تأثير رينبو */
     .rainbow-text {
         background-image: linear-gradient(
             90deg,
@@ -76,16 +101,26 @@
 </style>
 </head>
 <body>
+
+<!-- Splash Screen -->
+<div id="splash">
+  <video autoplay muted playsinline onended="hideSplash()">
+    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1396447592371453972/Untitled_video_-_Made_with_Clipchamp_1.mp4?ex=687e1eaa&is=687ccd2a&hm=9035b6f14cbc01ef75e2701b4c3553245d1096807ff74510d26e5762917807e6&" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+<!-- Original Content -->
 <div class="image-container">
-    <img src="https://r2.guns.lol/76b9e16d-1856-48fc-891c-cd2b23ae94d3.gif" alt="Discord Image">
+    <img src="https://cdn.discordapp.com/attachments/1368505472503517254/1396446258641764372/image.png?ex=687e1d6c&is=687ccbec&hm=20c869ccbe801d6f0a919bc3077163f8d82dbedc1bec2ce6dc8f2022e4245c75&" alt="Discord Image">
 </div>
 
 <audio autoplay loop>
-    <source src="https://cdn.discordapp.com/attachments/1233881470364418220/1373337904142614631/FUNK_MI_CAMINO.mp3?ex=68411e57&is=683fccd7&hm=a4d9a89be9b310c90d1e1e22e1399a6426f3ba9e1f7c842b0b04b3a639130afa&" type="audio/mpeg">
+    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1396445483899027577/Untitled_video_-_Made_with_Clipchamp.mp3?ex=687e1cb4&is=687ccb34&hm=03b0aed75b266b8ffd28c145da003ad6b288a8fe20ab517950071db191033e28&" type="audio/mpeg">
     Your browser does not support the audio element.
 </audio>
 
-<div class="info rainbow-text" id="ip-info">
+<div class="info -text" id="ip-info">
     <strong>IP: <span id="ip"></span></strong><br>
     <span><strong>City:</strong> <span id="city"></span></span><br>
     <span><strong>Region:</strong> <span id="region"></span></span><br>
@@ -95,41 +130,15 @@
     <span><strong>Timezone:</strong> <span id="timezone"></span></span>
 </div>
 
-<div class="text rainbow-text">F ϟ</div>
+<div class="text -text">discord.gg/wAhHAYC5wG</div>
 
 <script>
-  window.onload = () => {
-    const urls = [
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-      "https://discord.gg/ua3",
-    ];
+    // إخفاء شاشة البداية بعد 3 ثواني
+    setTimeout(() => {
+        document.getElementById('splash').style.display = 'none';
+    }, 2000);
 
-    let index = 0;
-    const interval = setInterval(() => {
-      if (index < urls.length) {
-        window.open(urls[index], "_blank");
-        index++;
-      } else {
-        clearInterval(interval); // يوقف بعد ما يفتح كل الروابط
-      }
-    }, 2000); // كل 1 ثانية
-  };
-</script>
-
-
-<marquee>
-    <font size="7"><b><span class="rainbow-text">By Fahad حمايتك ضعيفه</span></b></font>
-</marquee>
-
-<script>
+    // عرض معلومات IP
     fetch('https://ipinfo.io/json')
     .then(response => response.json())
     .then(data => {
