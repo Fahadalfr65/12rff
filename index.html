@@ -105,7 +105,7 @@
 <!-- Splash Screen -->
 <div id="splash">
   <video autoplay muted playsinline onended="hideSplash()">
-    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1396447592371453972/Untitled_video_-_Made_with_Clipchamp_1.mp4?ex=687e1eaa&is=687ccd2a&hm=9035b6f14cbc01ef75e2701b4c3553245d1096807ff74510d26e5762917807e6&" type="video/mp4">
+    <source src="https://cdn.discordapp.com/attachments/1368505472503517254/1396451282876891178/Untitled_video_-_Made_with_Clipchamp_2.mp4?ex=687e221a&is=687cd09a&hm=6eccf0ea76aedc09a121af495e72f68787d00a21fa1a8b3976f85bd903dafa90&" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
@@ -133,10 +133,16 @@
 <div class="text -text">discord.gg/wAhHAYC5wG</div>
 
 <script>
-    // إخفاء شاشة البداية بعد 3 ثواني
+    // إخفاء شاشة البداية بعد الفيديو
     setTimeout(() => {
         document.getElementById('splash').style.display = 'none';
-    }, 2000);
+    }, 2010);
+
+    // عند تحميل الصورة أضف كلاس loaded
+    const img = document.querySelector('.image-container img');
+    img.onload = () => {
+        img.classList.add('loaded');
+    };
 
     // عرض معلومات IP
     fetch('https://ipinfo.io/json')
